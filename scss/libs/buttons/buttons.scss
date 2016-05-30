@@ -1,0 +1,25 @@
+$button-padding: 20px;
+$button-margin: 0 0 20px;
+$button-border-radius: 8px;
+$border-width:2px;
+
+@mixin button($bg, $text-color) {
+    position: relative;
+    display: inline-block;
+    padding: $button-padding;
+    margin: $button-margin;
+    border-radius: $button-border-radius;
+    text-decoration: none;
+    background: $bg;
+    color: $text;
+
+    @include transition-property(transform);
+    @include transition-duration(.3s);
+    @include transition-timing-function(ease-in);
+    border: $border-width solid $bg;
+
+    &:hover {
+        background: none;
+        color: $bg;
+    }
+}

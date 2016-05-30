@@ -1,0 +1,33 @@
+// Breakpoints Mixin
+// ==========================================
+// @param $break = number of ems or keyword used to establish screensize
+// mobile first, build for smallest increase for each device
+// can be custom or use phone / tablet / laptop / desktop
+
+@mixin breakpoint($break) {
+    @if $break == phone{
+        @media (min-width: 30em) {
+             @content;
+        }
+    }
+    @elseif $break == tablet {
+         @media (min-width: 48em){
+            @content;
+        }
+    }
+    @elseif $break == laptop {
+         @media (min-width: 60em){
+            @content;
+        }
+    }
+    @elseif $break == desktop {
+         @media (min-width: 80em){
+            @content;
+        }
+    }
+    @else {
+         @media (min-width: $break){
+            @content;
+        }
+    }
+}
